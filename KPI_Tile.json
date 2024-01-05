@@ -1,0 +1,130 @@
+{
+	"id": "Standard.KPI.Tile",
+	"version": "1.0.0",
+	"name": "Standard KPI Tile",
+	"description": "A standard KPI tile for Version & Variance",
+	"newInstancePrefix": "KPIStandardtile",
+	"vendor": "Danny Brassil",
+	"eula": "",
+	"license": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "standard-kpi-tile",
+			"url": "/main2.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "standard-kpi-tile-style",
+			"url": "/styling.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+			}
+		
+	],
+	"properties": {
+		"color": {
+			"type": "string",
+			"description": "Background color",
+			"default": "white"
+		},
+		"title": {
+			"type": "string",
+			"description": "KPI Title text",
+			"default": "white"
+		},
+		"version": {
+			"type": "string",
+			"description": "KPI Version text",
+			"default": "white"
+		},
+		"variance": {
+			"type": "string",
+			"description": "KPI Variance text",
+			"default": "white"
+		},
+		"width": {
+			"type": "integer",
+			"default": 270
+		},
+		"height": {
+			"type": "integer",
+			"default": 120
+		}
+	},
+	"methods": {
+		"setColor": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newColor",
+					"type": "string",
+					"description": "The new background color"
+				}
+			],
+			"body": "this.color = newColor;"
+		},
+		"getColor": {
+			"returnType": "string",
+			"description": "Returns the background color.",
+			"body": "return this.color;"
+		},
+		"setTitle": {
+			"description": "Sets the KPI Title.",
+			"parameters": [
+				{
+					"name": "newTitle",
+					"type": "string",
+					"description": "The new KPI Title"
+				}
+			],
+			"body": "this.title = newTitle;"
+		},
+		"getTitle": {
+			"returnType": "string",
+			"description": "Returns the KPI Tile Title.",
+			"body": "return this.title;"
+		},
+		"setVersion": {
+			"description": "Sets the KPI Version Text.",
+			"parameters": [
+				{
+					"name": "newVersion",
+					"type": "string",
+					"description": "The new KPI Title Version text"
+				}
+			],
+			"body": "this.version = newVersion;"
+		},
+		"getVersion": {
+			"returnType": "string",
+			"description": "Returns the KPI Tile version.",
+			"body": "return this.version;"
+		},
+		"setVariance": {
+			"description": "Sets the KPI variance Text.",
+			"parameters": [
+				{
+					"name": "newVariance",
+					"type": "string",
+					"description": "The new KPI Title variance text"
+				}
+			],
+			"body": "this.variance = newVariance;"
+		},
+		"getVariance": {
+			"returnType": "string",
+			"description": "Returns the KPI Tile variance.",
+			"body": "return this.variance;"
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks."
+		}
+	}
+}
+
+ 
