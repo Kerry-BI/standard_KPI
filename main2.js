@@ -69,6 +69,11 @@
 	.arrow.red {
 		background-image: url('https://kerry-bi.github.io/standard_KPI/downArrowRed.png'); /*  the path to red arrow image */
 	}
+
+	/* black dash arrow */
+	.arrow.black {
+		background-image: url('https://kerry-bi.github.io/standard_KPI/black-arow.png'); /*  the path to red arrow image */
+	}
 	</style>
 	
 	`;
@@ -131,18 +136,30 @@
 			}
 
 			if ("arrowColor" in changedProperties) {
-				if(changedProperties["arrowColor"] = "green"){
+				if(changedProperties["arrowColor"] === "green"){
 					//show green arrow
 					this._rootArrow.classList.remove("red");
+					this._rootArrow.classList.remove("black");
 					this._rootArrow.classList.add("green");
 
-				}else if(changedProperties["arrowColor"] = "red"){
+				}else if(changedProperties["arrowColor"] === "red"){
 					//show red arrow
 					this._rootArrow.classList.remove("green");
+					this._rootArrow.classList.remove("black");
 					this._rootArrow.classList.add("red");
+
+				}
+				else if(changedProperties["arrowColor"] === "black"){
+					//show red arrow
+					this._rootArrow.classList.remove("green");
+					this._rootArrow.classList.remove("red");
+					this._rootArrow.classList.add("black");
 
 				}else{
 					//hide arrow 
+					this._rootArrow.classList.remove("green");
+					this._rootArrow.classList.remove("red");
+					this._rootArrow.classList.remove("black");
 				}
 			}
 
