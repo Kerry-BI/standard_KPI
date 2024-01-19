@@ -45,6 +45,16 @@
 			"description": "KPI Variance text",
 			"default": "white"
 		},
+		"showArrows":{
+			"type": "string",
+			"description": "true or false to show the arrow indicators ",
+			"default": "true"
+		},
+		"arrowColor":{
+			"type": "string",
+			"description": "green or red value of the arrow ",
+			"default": ""
+		},
 		"width": {
 			"type": "integer",
 			"default": 270
@@ -70,6 +80,54 @@
 			"returnType": "string",
 			"description": "Returns the background color.",
 			"body": "return this.color;"
+		},
+		"setVariance": {
+			"description": "Sets the KPI variance Text.",
+			"parameters": [
+				{
+					"name": "newVariance",
+					"type": "string",
+					"description": "The new KPI Title variance text"
+				}
+			],
+			"body": "this.variance = newVariance;"
+		},
+		"getVariance": {
+			"returnType": "string",
+			"description": "Returns the KPI Tile variance.",
+			"body": "return this.variance;"
+		},
+		"setShowArrowIndicator": {
+			"description": "Sets true / false value for whether to show the Arrow indicator in the kpi tiles",
+			"parameters": [
+				{
+					"name": "newShowArrows",
+					"type": "string",
+					"description": "The new true/false value to show the Arrow indicator in the kpi tiles "
+				}
+			],
+			"body": "this.showArrows = newShowArrows;"
+		},
+		"getShowArrowIndicator": {
+			"returnType": "string",
+			"description": "Returns true/false value to show the Arrow.",
+			"body": "return this.showArrows;"
+		},
+		"setArrowColor": {
+			"description": "Sets green / red value for the color of the arrow indicator ",
+			"parameters": [
+				{
+					"name": "newArrowColor",
+					"type": "string",
+					"description": "The new green / red value for the color of the arrow indicator "
+				}
+			],
+			"body": "this.arrowColor = newArrowColor;"
+		},
+		"getArrowColor": {
+			"returnType": "string",
+			"description": "Returns the arrow color.",
+			"body": "return this.arrowColor;"
 		},
 		"setTitle": {
 			"description": "Sets the KPI Title.",
@@ -102,22 +160,7 @@
 			"returnType": "string",
 			"description": "Returns the KPI Tile version.",
 			"body": "return this.version;"
-		},
-		"setVariance": {
-			"description": "Sets the KPI variance Text.",
-			"parameters": [
-				{
-					"name": "newVariance",
-					"type": "string",
-					"description": "The new KPI Title variance text"
-				}
-			],
-			"body": "this.variance = newVariance;"
-		},
-		"getVariance": {
-			"returnType": "string",
-			"description": "Returns the KPI Tile variance.",
-			"body": "return this.variance;"
+			
 		}
 	},
 	"events": {

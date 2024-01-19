@@ -17,6 +17,13 @@
 						<td>Variance Text</td>
 						<td><input id="kpi_variance" type="text" size="40" maxlength="40"></td>
 					</tr>
+					<tr>
+						<td>Show arrow indicator</td>
+						<select name="arrows" id="arrows">
+							<option value="True">true</option>
+							<option value="False">false</option>
+						</select>
+					</tr>
 				</table>
 				<input type="submit" style="display:inline;">
 		</fieldset>
@@ -55,7 +62,8 @@
 							color: this.color,
 							title: this.title,
 							version: this.version,
-							varianc: this.variance
+							variance: this.variance,
+							showArrows:this.showArrows
 						}
 					}
 			}));
@@ -91,6 +99,14 @@
 
 		get color() {
 			return this._shadowRoot.getElementById("styling_color").value;
+		}
+
+		set showArrows(newShowArrows) {
+			this._shadowRoot.getElementById("arrows").value = newShowArrows;
+		}
+
+		get showArrows() {
+			return this._shadowRoot.getElementById("arrows").value;
 		}
 
 	}

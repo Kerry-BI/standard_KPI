@@ -6,7 +6,7 @@
   		<div class="kpi-content">
     		<div id="VersionText" class="version-text">Version 1.0</div>
    			<div id="VarianceText" class="variance-text">Variance: +10%</div>
-			<div class="arrow"></div> <!-- Added div for the arrow -->
+			<div id="arrow" class="arrow"></div> <!-- Added div for the arrow -->
   		</div>
 	</div>
 
@@ -62,12 +62,12 @@
 
 	/* Green up arrow */
 	.arrow.green {
-		background-image: url('path_to_green_arrow_image.png'); /* Replace with the path to your green arrow image */
+		background-image: url('https://kerry-bi.github.io/standard_KPI/upArrowGreen.png'); /* the path to green arrow image */
 	}
 
 	/* Red down arrow */
 	.arrow.red {
-		background-image: url('path_to_red_arrow_image.png'); /* Replace with the path to your red arrow image */
+		background-image: url('https://kerry-bi.github.io/standard_KPI/downArrowRed.png'); /*  the path to red arrow image */
 	}
 	</style>
 	
@@ -82,7 +82,8 @@
 			this._rootVersion = this._shadowRoot.getElementById('VersionText');
 			this._rootVariance = this._shadowRoot.getElementById('VarianceText');
 			this._rootTile = this._shadowRoot.getElementById('KPITile');
-			this._rootTitle = this._shadowRoot.getElementById('title')
+			this._rootTitle = this._shadowRoot.getElementById('title');
+			this._rootArrow = this._shadowRoot.getElementById('arrow');
 			
 			
 			this.addEventListener("click", event => {
@@ -112,8 +113,42 @@
 			}
 
 			if ("variance" in changedProperties) {
+				//this._rootTile.style["background-color"] = changedProperties["color"];
 				this._rootVariance.textContent = changedProperties["variance"];
 			}
+
+			if ("showArrows" in changedProperties) {
+				if(changedProperties["showArrows"] = "true"){
+					//this._rootArrow.style.display = "block"
+					this._rootArrow.style.visibility = "visible";
+
+				}else if(changedProperties["showArrows"] = "false"){
+					//this._rootArrow.style.display = "none"
+					this._rootArrow.style.visibility = "hidden";
+
+
+				}
+			}
+
+			if ("arrowColor" in changedProperties) {
+				if(changedProperties["arrowColor"] = "green"){
+					//show green arrow
+					this._rootArrow.classList.remove("red");
+					this._rootArrow.classList.add("green");
+
+				}else if(changedProperties["arrowColor"] = "red"){
+					//show red arrow
+					this._rootArrow.classList.remove("green");
+					this._rootArrow.classList.add("red");
+
+				}else{
+					//hide arrow 
+				}
+			}
+
+		
+
+			
 
 			// if("radius" in changedProperties) {
 			// 	this._rootTile.style.borderRadius =  changedProperties["radius"];
